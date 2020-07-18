@@ -1,11 +1,12 @@
 import "./styles.css";
-import { MessageProvider } from "../components/MessageProvider";
+import { Provider } from "react-redux";
+import store from "../store";
 
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   return (
-    <MessageProvider>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </MessageProvider>
+    </Provider>
   );
 }

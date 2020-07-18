@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
 import { Messages } from "./Messages";
 
 export const AppLayout: React.FC = (props) => {
-  const [title, setTitle] = useState("Tour of Hero");
+
+  const title = "Tour of Hero"
 
   return (
     <>
@@ -15,11 +15,11 @@ export const AppLayout: React.FC = (props) => {
 
         <h1>{title}</h1>
         <nav>
-          <Link href="/hero">
-            <a>Heroes</a>
-          </Link>
           <Link href="/dashboard">
             <a>DashBoard</a>
+          </Link>
+          <Link href="/hero">
+            <a>Heroes</a>
           </Link>
         </nav>
 

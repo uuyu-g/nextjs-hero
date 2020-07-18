@@ -1,9 +1,14 @@
 import React from "react";
-import { useHeroes } from "./useHeroes";
 import Link from "next/link";
+import { Hero } from "../lib/Hero";
+import { HeroSearch } from "./HeroSearch";
 
-export const DashBoard: React.FC = () => {
-  const { heroes } = useHeroes();
+type Props = {
+  heroes: Hero[]
+}
+
+export const DashBoard: React.FC<Props> = ({heroes}) => {
+
   const selectedHeroes = heroes.slice(1, 5);
 
   return (
@@ -21,9 +26,10 @@ export const DashBoard: React.FC = () => {
         ))}
       </div>
 
+      <HeroSearch />
+
       <style jsx>
         {`
-          /* DashboardComponent's private CSS styles */
           [class*="col-"] {
             float: left;
             padding-right: 20px;
